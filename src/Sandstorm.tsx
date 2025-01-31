@@ -49,9 +49,9 @@ const Sandstorm = ({ className }: SandstormProps) => {
     // Create particle material with adjusted properties
     const particleMaterial = new THREE.PointsMaterial({
       color: 0x8b4513,
-      size: 0.12,
+      size: 0.1,
       transparent: true,
-      opacity: 0.5,
+      opacity: 0.6,
       blending: THREE.AdditiveBlending,
       sizeAttenuation: true,
       alphaMap: (() => {

@@ -19,36 +19,37 @@ function App() {
     {
       question: "¿Quiénes pueden participar?",
       answer:
-        "Cualquiera con ganas de inventar, aprender y crear. No importa tu nivel, solo importa tu curiosidad.",
+        "¡Cualquiera puede participar! Regístrate en el formulario. No lo pienses demasiado, ¡habrá proyectos que deberás resolver!",
     },
     {
       question: "¿Tiene algún costo?",
       answer:
-        "No. Queremos que todos tengan la oportunidad de explorar nuevas ideas sin barreras.",
+        "No tiene ningún costo. Queremos que absolutamente todos participen y resuelvan problemas. México tiene mucho talento y esta es una forma de demostrarlo.",
     },
     {
-      question: "¿Dónde se llevará a cabo?",
+      question: "¿Dónde y cuándo se llevará a cabo?",
       answer:
-        "El evento será en Tecnológico de Monterrey, Campus Monterrey. Proporcionaremos todos los detalles específicos a los participantes registrados.",
+        "El evento será en Tecnológico de Monterrey, Campus Monterrey. Se realizará el 22 y 23 de marzo, sábado y domingo.",
     },
     {
       question: "¿Qué puedo construir?",
       answer:
-        "Lo que tu imaginación dicte: prototipos de robótica, proyectos de IA, herramientas web, algo que sacuda el polvo de lo convencional.",
+        "¡Lo que quieras! Valoramos la creatividad. Para IA tendremos ciertos retos específicos, al igual que para Robótica.",
     },
     {
       question: "¿Necesito un equipo?",
       answer:
-        "Puedes venir solo o con equipo. Si vienes solo, tendremos una sesión de networking para formar equipos al inicio del evento.",
+        "No es necesario, los participantes individuales son bienvenidos. Tenemos un límite de participantes, ¡así que regístrate pronto!",
     },
     {
       question: "¿Qué debo traer?",
       answer:
-        "Tu laptop, cargador, una mente abierta y muchas ganas de crear. Nosotros nos encargamos de la comida, bebidas y snacks durante todo el evento.",
+        "Laptop y cargador. Estamos buscando patrocinadores para la comida, compartiremos más detalles próximamente.",
     },
     {
       question: "¿Habrá premios?",
-      answer: "Sí. Premios en efectivo a los ganadores.",
+      answer:
+        "Sí, habrá premios en efectivo para los ganadores, decididos por los jueces.",
     },
   ];
 
@@ -183,12 +184,6 @@ function App() {
           </button>
         </div>
         <nav className="hidden md:flex flex-wrap justify-center gap-4 md:gap-12 text-base md:text-xl text-white/100">
-          <a href="#sobre" className="hover:underline">
-            Sobre
-          </a>
-          <a href="#rutas" className="hover:underline">
-            Rutas Principales
-          </a>
           <a href="#faq" className="hover:underline">
             FAQ
           </a>
@@ -231,20 +226,6 @@ function App() {
 
         <div className="flex flex-col items-center justify-center h-full">
           <nav className="flex flex-col items-center gap-8 text-xl text-[#4a3f35]">
-            <a
-              href="#sobre"
-              className="hover:text-[#d87c2a] transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Sobre
-            </a>
-            <a
-              href="#rutas"
-              className="hover:text-[#d87c2a] transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Rutas Principales
-            </a>
             <a
               href="#faq"
               className="hover:text-[#d87c2a] transition-colors"
@@ -296,6 +277,9 @@ function App() {
           <p className="font-body text-2xl sm:text-3xl md:text-4xl text-white mt-4 drop-shadow-md select-none">
             Hackathon
           </p>
+          <span className="font-body text-xl sm:text-2xl md:text-3xl text-white/80 mt-4 drop-shadow-md select-none">
+            <small>22-23 de Marzo</small>
+          </span>
         </div>
       </section>
 
@@ -314,53 +298,53 @@ function App() {
               ¿De qué se trata?
             </h2>
             <p className="text-lg md:text-xl leading-relaxed text-center max-w-4xl mx-auto">
-              Arrakis es un hackathon de 48 horas que conecta el talento
-              mexicano con Silicon Valley. Reunimos a estudiantes y
-              profesionales apasionados por la tecnología para construir
-              soluciones innovadoras que resuelvan desafíos reales. Una
-              oportunidad única para crear conexiones, aprender de mentores de
-              clase mundial y dar el siguiente paso en tu carrera tecnológica.
+              Un hackathon de 48 horas patrocinado por empresas de Silicon
+              Valley. Contamos con dos categorías principales: Inteligencia
+              Artificial y Robótica. Con solo 100 lugares disponibles, los
+              participantes competirán por premios en efectivo. El evento se
+              llevará a cabo en el Tecnológico de Monterrey, Campus Monterrey.
             </p>
           </section>
 
-          {/* Rutas Principales Section - Make grid responsive */}
-          <section id="rutas" className="w-full py-12 md:py-20 px-4 font-body ">
+          {/* Categories Section (formerly Rutas Principales) */}
+          <section id="rutas" className="w-full">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-center mb-8 md:mb-12">
-              Rutas Principales
+              Categorías
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-              {/* Robótica */}
-              <div className="relative group cursor-pointer overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full">
+              {/* IA */}
+              <div className="relative h-[80vh] group">
                 <img
-                  src="robotics-placeholder.png"
-                  alt="Robótica"
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                  src="programmer2_bg.png"
+                  alt="Inteligencia Artificial"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-30 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-2xl font-bold">
-                    Robótica e IoT
+                <div className="absolute inset-0 bg-[#E7DBC6] bg-opacity-10 group-hover:bg-opacity-30 flex justify-center items-center transition-all duration-300">
+                  <span className="text-white text-3xl md:text-4xl font-bold opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                    Inteligencia Artificial
                   </span>
                 </div>
               </div>
 
-              {/* IA */}
-              <div className="relative group cursor-pointer overflow-hidden">
+              {/* Robótica */}
+              <div className="relative h-[80vh] group">
                 <img
-                  src="ai-placeholder.png"
-                  alt="Inteligencia Artificial"
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                  src="robotics2_bg.png"
+                  alt="Robótica"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-30 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-2xl font-bold">
-                    IA y Machine Learning
+                <div className="absolute inset-0 bg-[#E7DBC6] bg-opacity-10 group-hover:bg-opacity-30 flex justify-center items-center transition-all duration-300">
+                  <span className="text-white text-3xl md:text-4xl font-bold opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                    Robótica
                   </span>
                 </div>
               </div>
             </div>
             <p className="text-center text-base md:text-lg mt-6 md:mt-8 text-gray-700 max-w-3xl mx-auto px-4">
-              Dos caminos, infinitas posibilidades. Elige tu ruta y trabaja con
-              las últimas tecnologías junto a mentores especializados de Silicon
-              Valley.
+              Dos caminos, una decisión. Hardware o software, tú eliges. No lo
+              pienses demasiado - ambas rutas tendrán retos que pondrán a prueba
+              tu creatividad e ingenio. Lo importante es construir algo
+              innovador.
             </p>
           </section>
 
@@ -430,13 +414,19 @@ function App() {
               Regístrate
             </h2>
             <p className="text-lg leading-relaxed mb-8">
-              Da el primer paso hacia una experiencia que podría cambiar tu
-              carrera. Plazas limitadas para asegurar la mejor experiencia y
-              atención personalizada.
+              100 lugares. 48 horas. Un espacio para crear junto a los mejores
+              ingenierios y desarrolladores del país. Conecta directamente con
+              empresas de Silicon Valley y construye tecnología que importe. No
+              lo pienses mucho, México tiene el talento, demuéstralo.
             </p>
             <a
-              href="#registro-form"
-              className="inline-block bg-[#d87c2a] text-white font-semibold py-3 px-6 rounded hover:bg-[#b7651c] transition-colors"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSebLgYcggdIImgOFlYIt-hptTba6-Q1_R0DE5OBHc2E6WqEzw/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#d87c2a] text-white font-semibold py-4 px-8 rounded-lg 
+              shadow-[0_0_20px_rgba(216,124,42,0.5)] hover:shadow-[0_0_30px_rgba(216,124,42,0.7)] 
+              hover:bg-[#e68a35] transform hover:scale-105 transition-all duration-300 
+              border-2 border-[#d87c2a]/20 backdrop-blur-sm text-lg"
             >
               Asegura tu lugar
             </a>
@@ -444,7 +434,7 @@ function App() {
         </div>
       </div>
 
-      <footer className="w-full py-6 text-center bg-[#e7dbc6] border-t border-gray-300 font-body">
+      <footer className="w-full py-6 text-center bg-[#ce9627] border-t border-gray-300 font-body">
         <p className="text-sm">
           &copy; {new Date().getFullYear()} Arrakis. Construyendo puentes entre
           el talento mexicano y Silicon Valley.
