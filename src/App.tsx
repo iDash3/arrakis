@@ -19,7 +19,7 @@ function App() {
     {
       question: "¿Quiénes pueden participar?",
       answer:
-        "¡Cualquiera puede participar! Regístrate en el formulario. No lo pienses demasiado, ¡habrá proyectos que deberás resolver!",
+        "Cualquier estudiante puede participar! Regístrate en el formulario. No lo pienses demasiado, habrá retos para resolver!",
     },
     {
       question: "¿Tiene algún costo?",
@@ -29,27 +29,32 @@ function App() {
     {
       question: "¿Dónde y cuándo se llevará a cabo?",
       answer:
-        "El evento será en Tecnológico de Monterrey, Campus Monterrey. Se realizará el 22 y 23 de marzo, sábado y domingo.",
+        "El evento será presencial en Tecnológico de Monterrey, Campus Monterrey. Se realizará el 22 y 23 de marzo, sábado y domingo.",
     },
     {
       question: "¿Qué puedo construir?",
       answer:
-        "¡Lo que quieras! Valoramos la creatividad. Para IA tendremos ciertos retos específicos, al igual que para Robótica.",
+        "Lo que quieras! Valoramos la creatividad. Tendremos ciertos retos específicos para cada categoría, informaremos más después del registro.",
     },
     {
       question: "¿Necesito un equipo?",
       answer:
-        "No es necesario, los participantes individuales son bienvenidos. Tenemos un límite de participantes, ¡así que regístrate pronto!",
+        "No es necesario, los participantes individuales son bienvenidos. Tenemos un límite de participantes, así que regístrate pronto!",
     },
     {
       question: "¿Qué debo traer?",
       answer:
-        "Laptop y cargador. Estamos buscando patrocinadores para la comida, compartiremos más detalles próximamente.",
+        "Por favor trae una identificación universitaria válida (o identificación estudiantil si en preparatoria), laptop, cargador, ropa cómoda. Estamos en proceso de conseguir patrocinadores para la comida, compartiremos más detalles próximamente.",
     },
     {
       question: "¿Habrá premios?",
       answer:
         "Sí, habrá premios en efectivo para los ganadores, decididos por los jueces.",
+    },
+    {
+      question: "¿Puedo obtener ayuda económica?",
+      answer:
+        "Contáctanos y haremos lo posible por ayudarte según tu situación, aunque no podemos garantizar nada. Queremos que el dinero no sea un impedimento para participar.",
     },
   ];
 
@@ -184,14 +189,14 @@ function App() {
           </button>
         </div>
         <nav className="hidden md:flex flex-wrap justify-center gap-4 md:gap-12 text-base md:text-xl text-white/100">
-          <a href="#faq" className="hover:underline">
-            FAQ
-          </a>
-          <a href="#patrocinadores" className="hover:underline">
-            Patrocinadores
-          </a>
           <a href="#registro" className="hover:underline font-bold">
             Registro
+          </a>
+          <a href="#patrocinadores" className="hover:underline">
+            Sponsors
+          </a>
+          <a href="#faq" className="hover:underline">
+            FAQ
           </a>
         </nav>
       </header>
@@ -227,25 +232,25 @@ function App() {
         <div className="flex flex-col items-center justify-center h-full">
           <nav className="flex flex-col items-center gap-8 text-xl text-[#4a3f35]">
             <a
-              href="#faq"
-              className="hover:text-[#d87c2a] transition-colors"
+              href="#registro"
+              className="hover:text-[#d87c2a] transition-colors font-bold"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              FAQ
+              Registro
             </a>
             <a
               href="#patrocinadores"
               className="hover:text-[#d87c2a] transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Patrocinadores
+              Sponsors
             </a>
             <a
-              href="#registro"
-              className="hover:text-[#d87c2a] transition-colors font-bold"
+              href="#faq"
+              className="hover:text-[#d87c2a] transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Registro
+              FAQ
             </a>
           </nav>
         </div>
@@ -259,14 +264,14 @@ function App() {
         <img
           src="girlnobg.png"
           alt="Joven inspiradora"
-          className={`absolute inset-0 w-full h-full object-cover md:object-contain object-center transition-opacity duration-1000 ${
+          className={`absolute bottom-0 w-full h-[95vh] object-cover md:object-contain object-bottom transition-opacity duration-1000 ${
             showFirstImage ? "opacity-100" : "opacity-0"
           }`}
         />
         <img
           src="boynobg.png"
           alt="Joven inspirador"
-          className={`absolute inset-0 w-full h-full object-cover md:object-contain object-center transition-opacity duration-1000 ${
+          className={`absolute bottom-0 w-full h-[95vh] object-cover md:object-contain object-bottom transition-opacity duration-1000 ${
             showFirstImage ? "opacity-0" : "opacity-100"
           }`}
         />
@@ -295,14 +300,18 @@ function App() {
             className="w-full max-w-5xl mx-auto py-12 md:py-20 px-4 font-body backdrop-blur-sm"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-center mb-8 md:mb-12">
-              ¿De qué se trata?
+              ¿De qué trata?
             </h2>
+
             <p className="text-lg md:text-xl leading-relaxed text-center max-w-4xl mx-auto">
-              Un hackathon de 48 horas patrocinado por empresas de Silicon
-              Valley. Contamos con dos categorías principales: Inteligencia
-              Artificial y Robótica. Con solo 100 lugares disponibles, los
-              participantes competirán por premios en efectivo. El evento se
-              llevará a cabo en el Tecnológico de Monterrey, Campus Monterrey.
+              <strong className="font-extrabold">
+                Un hackathon de 48 horas patrocinado por empresas de Silicon
+                Valley.
+              </strong>{" "}
+              Contamos con dos categorías principales: Inteligencia Artificial y
+              Robótica. Con solo 100 lugares disponibles, los participantes
+              competirán por premios en efectivo. El evento se llevará a cabo en
+              el Tecnológico de Monterrey, Campus Monterrey.
             </p>
           </section>
 
@@ -348,6 +357,122 @@ function App() {
             </p>
           </section>
 
+          {/* Registro Section */}
+          <section
+            id="registro"
+            className="w-full max-w-5xl mx-auto py-20 px-4 text-center font-body backdrop-blur-sm"
+          >
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">
+              Regístrate
+            </h2>
+            <p className="text-lg leading-relaxed mb-8">
+              100 lugares. 48 horas. Un espacio para crear junto a los mejores
+              ingenierios y desarrolladores del país. Conecta directamente con
+              empresas de Silicon Valley y construye tecnología que importe. No
+              lo pienses mucho, México tiene el talento, demuéstralo.
+            </p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSebLgYcggdIImgOFlYIt-hptTba6-Q1_R0DE5OBHc2E6WqEzw/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#d87c2a] text-white font-semibold py-4 px-8 rounded-lg 
+              shadow-[0_0_20px_rgba(216,124,42,0.5)] hover:shadow-[0_0_30px_rgba(216,124,42,0.7)] 
+              hover:bg-[#e68a35] transform hover:scale-105 transition-all duration-300 
+              border-2 border-[#d87c2a]/20 backdrop-blur-sm text-lg"
+            >
+              Asegura tu lugar
+            </a>
+          </section>
+
+          {/* Sponsors Section */}
+          <section
+            id="patrocinadores"
+            className="w-full max-w-5xl mx-auto py-12 md:py-20 px-4 text-center font-body backdrop-blur-sm"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-8 md:mb-12">
+              Sponsors
+            </h2>
+            {/* Main sponsors row */}
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-8">
+              <img
+                src="sponsorone.png"
+                alt="Patrocinador 1"
+                className="w-32 md:w-40 object-contain"
+              />
+              <img
+                src="worllogo.svg"
+                alt="Patrocinador 2"
+                className="w-32 md:w-40 object-contain"
+              />
+              <img
+                src="TheResidencyLogo.svg"
+                alt="Patrocinador 3"
+                className="w-32 md:w-40 object-contain"
+              />
+            </div>
+            {/* Secondary sponsors row */}
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+              <img
+                src="placeholder-zepheon.png"
+                alt="Zepheon"
+                className="w-24 md:w-32 object-contain"
+              />
+              <img
+                src="placeholder-globe.png"
+                alt="Globe"
+                className="w-24 md:w-32 object-contain"
+              />
+            </div>
+
+            {/* Individual sponsors circle */}
+            <div className="mt-12">
+              <h3 className="text-xl md:text-2xl font-heading font-bold mb-8">
+                Sponsors Individuales
+              </h3>
+              <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="group relative">
+                    <img
+                      src="placeholder-person.png"
+                      alt={`Patrocinador Individual ${i + 1}`}
+                      className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover 
+                      border-2 border-[#d87c2a] transition-transform duration-300 
+                      hover:scale-110 hover:border-4"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-16 pt-8 border-t border-gray-300">
+              <h3 className="text-xl md:text-2xl font-heading font-bold mb-4">
+                Sé un Sponsor
+              </h3>
+              <p className="text-lg leading-relaxed mb-6 max-w-2xl mx-auto">
+                Sé parte de un evento que une a estudiantes apasionados por la
+                tecnología. Tu apoyo hace posible que más jóvenes descubran el
+                poder de crear.
+              </p>
+              <div className="flex justify-center gap-6 flex-wrap items-center">
+                <a
+                  href="mailto:arrakis@isaacbs.com"
+                  className="inline-block bg-[#d87c2a] text-white font-semibold py-3 px-6 rounded-lg 
+                  hover:bg-[#e68a35] transform hover:scale-105 transition-all duration-300"
+                >
+                  Contactar
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/isaacbau/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#d87c2a] underline font-medium"
+                >
+                  o envía un mensaje personal
+                </a>
+              </div>
+            </div>
+          </section>
+
           {/* FAQ Section */}
           <section
             id="faq"
@@ -377,60 +502,6 @@ function App() {
               ))}
             </div>
           </section>
-
-          {/* Sponsors Section - Adjust logo sizes */}
-          <section
-            id="patrocinadores"
-            className="w-full max-w-5xl mx-auto py-12 md:py-20 px-4 text-center font-body backdrop-blur-sm"
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-8 md:mb-12">
-              Patrocinadores
-            </h2>
-            <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-              <img
-                src="sponsorone.png"
-                alt="Patrocinador 1"
-                className="w-32 md:w-40 object-contain"
-              />
-              <img
-                src="worllogo.svg"
-                alt="Patrocinador 2"
-                className="w-32 md:w-40 object-contain"
-              />
-              <img
-                src="TheResidencyLogo.svg"
-                alt="Patrocinador 3"
-                className="w-32 md:w-40 object-contain"
-              />
-            </div>
-          </section>
-
-          {/* Registro Section */}
-          <section
-            id="registro"
-            className="w-full max-w-5xl mx-auto py-20 px-4 text-center font-body backdrop-blur-sm"
-          >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">
-              Regístrate
-            </h2>
-            <p className="text-lg leading-relaxed mb-8">
-              100 lugares. 48 horas. Un espacio para crear junto a los mejores
-              ingenierios y desarrolladores del país. Conecta directamente con
-              empresas de Silicon Valley y construye tecnología que importe. No
-              lo pienses mucho, México tiene el talento, demuéstralo.
-            </p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSebLgYcggdIImgOFlYIt-hptTba6-Q1_R0DE5OBHc2E6WqEzw/viewform?usp=header"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#d87c2a] text-white font-semibold py-4 px-8 rounded-lg 
-              shadow-[0_0_20px_rgba(216,124,42,0.5)] hover:shadow-[0_0_30px_rgba(216,124,42,0.7)] 
-              hover:bg-[#e68a35] transform hover:scale-105 transition-all duration-300 
-              border-2 border-[#d87c2a]/20 backdrop-blur-sm text-lg"
-            >
-              Asegura tu lugar
-            </a>
-          </section>
         </div>
       </div>
 
@@ -438,6 +509,18 @@ function App() {
         <p className="text-sm">
           &copy; {new Date().getFullYear()} Arrakis. Construyendo puentes entre
           el talento mexicano y Silicon Valley.
+          <br />
+          <span className="text-[10px] opacity-60 mt-3 inline-block">
+            Built and designed by{" "}
+            <a
+              href="https://zepheon.com"
+              className="underline hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Zepheon
+            </a>
+          </span>
         </p>
       </footer>
     </div>
