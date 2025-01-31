@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
+import Sandstorm from "./Sandstorm";
 
 function App() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
@@ -52,7 +53,7 @@ function App() {
   ];
 
   return (
-    <div className="w-full h-full text-gray-900 font-sans relative">
+    <div className="w-full h-full flex flex-col text-gray-900 font-sans relative">
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Orbitron&display=swap');
@@ -299,18 +300,15 @@ function App() {
       </section>
 
       {/* Main content wrapper with sandstorm effect */}
-      <div className="w-full bg-gradient-to-b from-[#e9d5b7] via-[#f0e2cc] to-[#f7efe3] sandstorm-wrapper">
-        {/* Sandstorm layers */}
-        <div className="sandstorm-layer sandstorm-layer-1"></div>
-        <div className="sandstorm-layer sandstorm-layer-2"></div>
-        <div className="sandstorm-layer sandstorm-layer-3"></div>
+      <div className="flex-grow relative sandstorm-wrapper h-full">
+        <Sandstorm className="absolute top-0 left-0 w-full h-full" />
 
-        {/* Content sections with relative positioning */}
-        <div className="relative">
+        {/* START OF CONTENT */}
+        <div className="relative z-10">
           {/* Sobre Section */}
           <section
             id="sobre"
-            className="w-full max-w-5xl mx-auto py-12 md:py-20 px-4 font-body"
+            className="w-full max-w-5xl mx-auto py-12 md:py-20 px-4 font-body backdrop-blur-sm"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-center mb-8 md:mb-12">
               ¿De qué se trata?
@@ -326,7 +324,7 @@ function App() {
           </section>
 
           {/* Rutas Principales Section - Make grid responsive */}
-          <section id="rutas" className="w-full py-12 md:py-20 px-4 font-body">
+          <section id="rutas" className="w-full py-12 md:py-20 px-4 font-body ">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-center mb-8 md:mb-12">
               Rutas Principales
             </h2>
@@ -369,7 +367,7 @@ function App() {
           {/* FAQ Section */}
           <section
             id="faq"
-            className="w-full max-w-5xl mx-auto py-20 px-4 font-body"
+            className="w-full max-w-5xl mx-auto py-20 px-4 font-body backdrop-blur-sm"
           >
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-8">
               FAQ
@@ -399,7 +397,7 @@ function App() {
           {/* Sponsors Section - Adjust logo sizes */}
           <section
             id="patrocinadores"
-            className="w-full max-w-5xl mx-auto py-12 md:py-20 px-4 text-center font-body"
+            className="w-full max-w-5xl mx-auto py-12 md:py-20 px-4 text-center font-body backdrop-blur-sm"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-8 md:mb-12">
               Patrocinadores
@@ -426,7 +424,7 @@ function App() {
           {/* Registro Section */}
           <section
             id="registro"
-            className="w-full max-w-5xl mx-auto py-20 px-4 text-center font-body"
+            className="w-full max-w-5xl mx-auto py-20 px-4 text-center font-body backdrop-blur-sm"
           >
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">
               Regístrate
