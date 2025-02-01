@@ -311,42 +311,79 @@ function App() {
           <div className="font-bold text-2xl md:text-3xl font-heading select-none text-white/100">
             {translations[language].header.title}
           </div>
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white p-2"
-          >
-            {isMobileMenuOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+          <div className="flex items-center gap-4">
+            {/* Mobile Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="md:hidden relative w-16 h-8 bg-amber-100 rounded-full p-1 shadow-inner focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-50 transition-colors duration-300 ease-in-out"
+              aria-label={isSpanish ? "Switch to English" : "Switch to Spanish"}
+            >
+              <motion.div
+                className="absolute inset-0 flex items-center justify-end pr-2 text-amber-800 font-medium text-xs"
+                initial={false}
+                animate={{ opacity: isSpanish ? 1 : 0 }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+                EN
+              </motion.div>
+              <motion.div
+                className="absolute inset-0 flex items-center pl-2 text-amber-800 font-medium text-xs"
+                initial={false}
+                animate={{ opacity: isSpanish ? 0 : 1 }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
+                ES
+              </motion.div>
+              <motion.div
+                className="w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center text-xs font-semibold text-amber-800"
+                animate={{
+                  x: isSpanish ? 0 : 32,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 700,
+                  damping: 30,
+                }}
+              >
+                {isSpanish ? "ES" : "EN"}
+              </motion.div>
+            </button>
+            {/* Hamburger Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden text-white p-2"
+            >
+              {isMobileMenuOpen ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
         <nav className="hidden md:flex flex-wrap justify-center gap-4 md:gap-12 text-base md:text-xl text-white/100 items-center">
           <a href="#registro" className="hover:underline font-bold">
@@ -358,39 +395,6 @@ function App() {
           <a href="#faq" className="hover:underline">
             {translations[language].header.links.faq}
           </a>
-          <button
-            onClick={toggleLanguage}
-            className="relative w-20 h-10 bg-amber-100 rounded-full p-1 shadow-inner focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-50 transition-colors duration-300 ease-in-out"
-            aria-label={isSpanish ? "Switch to English" : "Switch to Spanish"}
-          >
-            <motion.div
-              className="absolute inset-0 flex items-center justify-end pr-3 text-amber-800 font-medium text-sm"
-              initial={false}
-              animate={{ opacity: isSpanish ? 1 : 0 }}
-            >
-              EN
-            </motion.div>
-            <motion.div
-              className="absolute inset-0 flex items-center pl-3 text-amber-800 font-medium text-sm"
-              initial={false}
-              animate={{ opacity: isSpanish ? 0 : 1 }}
-            >
-              ES
-            </motion.div>
-            <motion.div
-              className="w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center text-xs font-semibold text-amber-800"
-              animate={{
-                x: isSpanish ? 0 : 40,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 700,
-                damping: 30,
-              }}
-            >
-              {isSpanish ? "ES" : "EN"}
-            </motion.div>
-          </button>
         </nav>
       </header>
 
