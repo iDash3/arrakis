@@ -76,7 +76,7 @@ const translations = {
         {
           question: "¿Qué debo traer?",
           answer:
-            "Por favor trae una identificación universitaria válida (o identificación estudiantil si en preparatoria), laptop, cargador, ropa cómoda. Estamos en proceso de conseguir patrocinadores para la comida, compartiremos más detalles próximamente.",
+            "Laptop, cargador, identificación válida (profesional o preparatoria). Estamos en proceso de conseguir patrocinadores para la comida, compartiremos más detalles próximamente.",
         },
         {
           question: "¿Habrá premios?",
