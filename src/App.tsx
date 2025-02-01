@@ -394,34 +394,69 @@ function App() {
             </h2>
             {/* Main sponsors row */}
             <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-8">
-              <img
-                src="sponsorone.png"
-                alt="Patrocinador 1"
-                className="w-32 md:w-40 object-contain"
-              />
-              <img
-                src="worllogo.svg"
-                alt="Patrocinador 2"
-                className="w-32 md:w-40 object-contain"
-              />
-              <img
-                src="TheResidencyLogo.svg"
-                alt="Patrocinador 3"
-                className="w-32 md:w-40 object-contain"
-              />
+              <a
+                href="https://tec.mx/en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src="sponsorone.png"
+                  alt="Tecnológico de Monterrey"
+                  className="w-32 md:w-40 object-contain"
+                />
+              </a>
+              <a
+                href="https://worldcoin.org/world-app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src="worllogo.svg"
+                  alt="World App"
+                  className="w-32 md:w-40 object-contain"
+                />
+              </a>
+              <a
+                href="https://www.livetheresidency.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src="TheResidencyLogo.svg"
+                  alt="The Residency"
+                  className="w-32 md:w-40 object-contain"
+                />
+              </a>
             </div>
             {/* Secondary sponsors row */}
             <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-              <img
-                src="placeholder-zepheon.png"
-                alt="Zepheon"
-                className="w-24 md:w-32 object-contain"
-              />
-              <img
-                src="placeholder-globe.png"
-                alt="Globe"
-                className="w-24 md:w-32 object-contain"
-              />
+              <a
+                href="https://zepheon.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src="zepheonlarge.png"
+                  alt="Zepheon"
+                  className="w-32 md:w-40 object-contain"
+                />
+              </a>
+              <a
+                href="https://globe.engineer/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <img
+                  src="globe.png"
+                  alt="Globe"
+                  className="w-24 md:w-32 object-contain"
+                />
+              </a>
             </div>
 
             {/* Individual sponsors circle */}
