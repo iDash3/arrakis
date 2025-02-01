@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Sandstorm from "./Sandstorm";
+import { motion } from "framer-motion";
 
 function App() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [showFirstImage, setShowFirstImage] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSpanish, setIsSpanish] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -57,6 +59,10 @@ function App() {
         "Contáctanos y haremos lo posible por ayudarte según tu situación, aunque no podemos garantizar nada. Queremos que el dinero no sea un impedimento para participar.",
     },
   ];
+
+  const toggleLanguage = () => {
+    setIsSpanish(!isSpanish);
+  };
 
   return (
     <div className="w-full h-full flex flex-col text-gray-900 font-sans relative">
@@ -188,7 +194,7 @@ function App() {
             )}
           </button>
         </div>
-        <nav className="hidden md:flex flex-wrap justify-center gap-4 md:gap-12 text-base md:text-xl text-white/100">
+        <nav className="hidden md:flex flex-wrap justify-center gap-4 md:gap-12 text-base md:text-xl text-white/100 items-center">
           <a href="#registro" className="hover:underline font-bold">
             Registro
           </a>
@@ -198,6 +204,39 @@ function App() {
           <a href="#faq" className="hover:underline">
             FAQ
           </a>
+          <button
+            onClick={toggleLanguage}
+            className="relative w-20 h-10 bg-amber-100 rounded-full p-1 shadow-inner focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-50 transition-colors duration-300 ease-in-out"
+            aria-label={isSpanish ? "Switch to English" : "Switch to Spanish"}
+          >
+            <motion.div
+              className="absolute inset-0 flex items-center justify-end pr-3 text-amber-800 font-medium text-sm"
+              initial={false}
+              animate={{ opacity: isSpanish ? 1 : 0 }}
+            >
+              EN
+            </motion.div>
+            <motion.div
+              className="absolute inset-0 flex items-center pl-3 text-amber-800 font-medium text-sm"
+              initial={false}
+              animate={{ opacity: isSpanish ? 0 : 1 }}
+            >
+              ES
+            </motion.div>
+            <motion.div
+              className="w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center text-xs font-semibold text-amber-800"
+              animate={{
+                x: isSpanish ? 0 : 40,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 700,
+                damping: 30,
+              }}
+            >
+              {isSpanish ? "ES" : "EN"}
+            </motion.div>
+          </button>
         </nav>
       </header>
 
