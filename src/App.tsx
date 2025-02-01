@@ -41,7 +41,7 @@ const translations = {
       individual: "Sponsors Individuales",
       becomeSponsor: "Sé un Sponsor",
       sponsorText:
-        "Sé parte de un evento que une a estudiantes apasionados por la tecnología. Tu apoyo hace posible que más jóvenes descubran el poder de crear.",
+        "El mundo está cambiando y la tecnología es más importante que nunca. Los mexicanos tienen un talento extraordinario - este es el momento de demostrarlo. Sé parte del movimiento que está redefiniendo el futuro tech de México.",
       contact: "Contactar",
       personalMessage: "o envía un mensaje personal",
     },
@@ -51,7 +51,7 @@ const translations = {
         {
           question: "¿Quiénes pueden participar?",
           answer:
-            "Cualquier estudiante puede participar! Regístrate en el formulario. No lo pienses demasiado, habrá retos para resolver!",
+            "¡Cualquier estudiante puede participar! Aunque buscamos especialmente desarrolladores de software, ingenieros, físicos y diseñadores, todos los roles son altamente valorados. Regístrate en el formulario. No lo pienses demasiado, habrá retos para resolver!",
         },
         {
           question: "¿Tiene algún costo?",
@@ -137,7 +137,7 @@ const translations = {
       individual: "Individual Sponsors",
       becomeSponsor: "Become a Sponsor",
       sponsorText:
-        "Be part of an event that unites students passionate about technology. Your support makes it possible for more young people to discover the power of creation.",
+        "The world is changing and technology is more important than ever. Mexicans are incredibly talented - this is our moment to prove it. Be part of the movement that's redefining Mexico's tech future.",
       contact: "Contact",
       personalMessage: "or send a personal message",
     },
@@ -147,7 +147,7 @@ const translations = {
         {
           question: "Who can participate?",
           answer:
-            "Any student can participate! Register through the form. Don't overthink it - there will be challenges to solve!",
+            "Any student can participate! While we're especially looking for software developers, engineers, physicists, and designers, all roles are highly valued. Register through the form. Don't overthink it - there will be challenges to solve!",
         },
         {
           question: "Does it cost anything?",
@@ -647,17 +647,19 @@ function App() {
                 {translations[language].sponsors.individual}
               </h3>
               <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="group relative">
-                    <img
-                      src="placeholder-person.png"
-                      alt={`Patrocinador Individual ${i + 1}`}
-                      className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover 
+                {["isaac.jpeg", "sully.png", "ivan.png", "yoran.jpeg"].map(
+                  (image, i) => (
+                    <div key={i} className="group relative">
+                      <img
+                        src={`/public/individuals/${image}`}
+                        alt={`Individual Sponsor ${i + 1}`}
+                        className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover 
                       border-2 border-[#d87c2a] transition-transform duration-300 
                       hover:scale-110 hover:border-4"
-                    />
-                  </div>
-                ))}
+                      />
+                    </div>
+                  )
+                )}
               </div>
             </div>
 
