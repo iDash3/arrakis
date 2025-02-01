@@ -88,6 +88,11 @@ const translations = {
           answer:
             "Contáctanos y haremos lo posible por ayudarte según tu situación, aunque no podemos garantizar nada. Queremos que el dinero no sea un impedimento para participar.",
         },
+        {
+          question: "¿Puedo asistir como invitado?",
+          answer:
+            "¡Por supuesto! Si estás interesado en asistir al evento como invitado o mentor, contáctanos directamente en Twitter: @isaacbautistas. Nos encantaría contar con tu presencia.",
+        },
       ],
     },
     footer: {
@@ -178,6 +183,11 @@ const translations = {
           question: "Can I get financial help?",
           answer:
             "Contact us and we'll do our best to help you based on your situation, although we can't guarantee anything. We want money not to be a barrier to participating.",
+        },
+        {
+          question: "Can I attend as a guest?",
+          answer:
+            "Absolutely! If you're interested in attending the event as a guest or mentor, contact us directly on Twitter: @isaacbautistas. We'd love to have you there.",
         },
       ],
     },
