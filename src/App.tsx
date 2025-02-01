@@ -651,7 +651,7 @@ function App() {
                   (image, i) => (
                     <div key={i} className="group relative">
                       <img
-                        src={`/public/individuals/${image}`}
+                        src={image}
                         alt={`Individual Sponsor ${i + 1}`}
                         className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover 
                       border-2 border-[#d87c2a] transition-transform duration-300 
