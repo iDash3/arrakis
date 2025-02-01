@@ -18,10 +18,15 @@ const translations = {
       subtitle: "Hackathon",
       date: "22-23 de Marzo",
     },
+    call: {
+      title: "Un llamado a los mejores",
+      content:
+        "Ingenieros. Desarrolladores. Diseñadores. Físicos. Creadores. Si tienes la pasión por construir el futuro, este es tu momento. México tiene un talento extraordinario - es hora de demostrarlo al mundo.",
+    },
     about: {
       title: "¿De qué trata?",
       content:
-        "Un hackathon de 48 horas patrocinado por empresas de Silicon Valley. Contamos con dos categorías principales: Inteligencia Artificial y Robótica. Con solo 100 lugares disponibles, los participantes competirán por premios en efectivo. El evento se llevará a cabo en el Tecnológico de Monterrey, Campus Monterrey.",
+        "Un hackathon de 48 horas patrocinado por empresas de Silicon Valley. Contamos con dos categorías principales: Inteligencia Artificial y Robótica. Con solo 100 lugares disponibles, los participantes competirán por premios en efectivo.\n\nEn Silicon Valley, la pasión por la tecnología es altamente valorada. Diseñadores, desarrolladores, ingenieros mecánicos, físicos - cada perspectiva aporta algo único. Queremos traer esa cultura a México.\n\nEl evento se llevará a cabo en el Tecnológico de Monterrey, Campus Monterrey.",
     },
     categories: {
       title: "Categorías",
@@ -33,7 +38,7 @@ const translations = {
     register: {
       title: "Regístrate",
       content:
-        "100 lugares. 48 horas. Un espacio para crear junto a los mejores ingenieros y desarrolladores del país. Conecta directamente con empresas de Silicon Valley y construye tecnología que importe. No lo pienses mucho, México tiene el talento, demuéstralo.",
+        "100 lugares. 48 horas. Un espacio único para crear junto a los mejores ingenieros y desarrolladores de México. Conecta directamente con empresas de Silicon Valley y construye tecnología con impacto real. México tiene el talento, es hora de demostrarlo.",
       cta: "Asegura tu lugar",
     },
     sponsors: {
@@ -41,7 +46,7 @@ const translations = {
       individual: "Sponsors Individuales",
       becomeSponsor: "Sé un Sponsor",
       sponsorText:
-        "El mundo está cambiando y la tecnología es más importante que nunca. Los mexicanos tienen un talento extraordinario - este es el momento de demostrarlo. Sé parte del movimiento que está redefiniendo el futuro tech de México.",
+        "El mundo está cambiando y la tecnología es más importante que nunca. Los mexicanos tienen un talento extraordinario - juntos podemos potenciarlo. Sé parte del movimiento que está redefiniendo el futuro tech de México.",
       contact: "Contactar",
       personalMessage: "o envía un mensaje personal",
     },
@@ -66,7 +71,7 @@ const translations = {
         {
           question: "¿Qué puedo construir?",
           answer:
-            "Lo que quieras! Valoramos la creatividad. Tendremos ciertos retos específicos para cada categoría, informaremos más después del registro.",
+            "Tendremos desafíos específicos para cada categoría (IA y Robótica) que pondrán a prueba tu habilidad! Creatividad es clave, los detalles de los retos se compartirán después del registro.",
         },
         {
           question: "¿Necesito un equipo?",
@@ -114,10 +119,15 @@ const translations = {
       subtitle: "Hackathon",
       date: "March 22-23",
     },
+    call: {
+      title: "A Call to the Finest",
+      content:
+        "Engineers. Developers. Designers. Physicists. Creators. If you have the passion to build the future, this is your moment. Mexico has extraordinary talent - it's time to show it to the world.",
+    },
     about: {
       title: "What is it about?",
       content:
-        "A 48-hour hackathon sponsored by Silicon Valley companies. We have two main categories: Artificial Intelligence and Robotics. With only 100 spots available, participants will compete for cash prizes. The event will take place at Tecnológico de Monterrey, Monterrey Campus.",
+        "A 48-hour hackathon sponsored by Silicon Valley companies. We have two main categories: Artificial Intelligence and Robotics. With only 100 spots available, participants will compete for cash prizes.\n\nIn Silicon Valley, passion for technology is highly valued. Designers, developers, mechanical engineers, physicists - each perspective brings something unique. We want to bring that culture to Mexico.\n\nThe event will take place at Tecnológico de Monterrey, Monterrey Campus.",
     },
     categories: {
       title: "Categories",
@@ -129,7 +139,7 @@ const translations = {
     register: {
       title: "Register",
       content:
-        "100 spots. 48 hours. A space to create alongside the best engineers and developers in the country. Connect directly with Silicon Valley companies and build technology that matters. Don't think twice - Mexico has the talent, prove it.",
+        "100 spots. 48 hours. A unique space to create alongside Mexico's finest engineers and developers. Connect directly with Silicon Valley companies and build impactful technology. Mexico has the talent, it's time to prove it.",
       cta: "Secure your spot",
     },
     sponsors: {
@@ -137,7 +147,7 @@ const translations = {
       individual: "Individual Sponsors",
       becomeSponsor: "Become a Sponsor",
       sponsorText:
-        "The world is changing and technology is more important than ever. Mexicans are incredibly talented - this is our moment to prove it. Be part of the movement that's redefining Mexico's tech future.",
+        "The world is changing and technology is more important than ever. Mexicans are incredibly talented - together we can amplify this potential. Be part of the movement that's redefining Mexico's tech future.",
       contact: "Contact",
       personalMessage: "or send a personal message",
     },
@@ -162,7 +172,7 @@ const translations = {
         {
           question: "What can I build?",
           answer:
-            "Whatever you want! We value creativity. We'll have certain specific challenges for each category, we'll let you know more after registration.",
+            "It depends on the challenge you choose! We'll have specific challenges for each category (AI and Robotics) that will test your creativity. Challenge details will be shared after registration.",
         },
         {
           question: "Do I need a team?",
@@ -476,10 +486,10 @@ function App() {
           <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white drop-shadow-md select-none">
             {translations[language].hero.title}
           </h1>
-          <p className="font-body text-2xl sm:text-3xl md:text-4xl text-white mt-4 drop-shadow-md select-none">
+          <p className="font-body text-2xl sm:text-3xl md:text-4xl text-white mt-2 drop-shadow-md select-none">
             {translations[language].hero.subtitle}
           </p>
-          <span className="font-body text-xl sm:text-2xl md:text-3xl text-white/80 mt-4 drop-shadow-md select-none">
+          <span className="font-body text-xl sm:text-2xl md:text-3xl text-white/80 mt-6 drop-shadow-md select-none">
             <small>{translations[language].hero.date}</small>
           </span>
         </div>
@@ -488,9 +498,17 @@ function App() {
       {/* Main content wrapper with sandstorm effect */}
       <div className="flex-grow relative sandstorm-wrapper h-full">
         <Sandstorm className="absolute top-0 left-0 w-full h-full" />
-
-        {/* START OF CONTENT */}
         <div className="relative z-10">
+          {/* Call to Action Section */}
+          <section className="w-full max-w-4xl mx-auto py-12 md:py-16 px-4 font-body backdrop-blur-sm">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-center mb-2 text-[#d87c2a]">
+              {translations[language].call.title}
+            </h2>
+            <p className="text-lg md:text-xl leading-relaxed text-center max-w-3xl mx-auto italic">
+              {translations[language].call.content}
+            </p>
+          </section>
+
           {/* Sobre Section */}
           <section
             id="sobre"
@@ -499,12 +517,16 @@ function App() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-center mb-8 md:mb-12">
               {translations[language].about.title}
             </h2>
-
-            <p className="text-lg md:text-xl leading-relaxed text-center max-w-4xl mx-auto">
-              <strong className="font-extrabold">
-                {translations[language].about.content}
-              </strong>
-            </p>
+            {translations[language].about.content
+              .split("\n\n")
+              .map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-lg md:text-xl leading-relaxed text-center max-w-4xl mx-auto mb-6"
+                >
+                  {paragraph}
+                </p>
+              ))}
           </section>
 
           {/* Categories Section (formerly Rutas Principales) */}
