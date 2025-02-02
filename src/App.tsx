@@ -21,7 +21,7 @@ const translations = {
     call: {
       title: "Un llamado a los mejores",
       content:
-        "Ingenieros. Desarrolladores. Diseñadores. Físicos. Creadores. Si tienes la pasión por construir el futuro, este es tu momento. México tiene un talento extraordinario - es hora de demostrarlo al mundo.",
+        "Ingenieros. Desarrolladores. Diseñadores. Físicos. Creadores. Si tienes la pasión por construir el futuro, este es tu momento. México tiene un talento extraordinario - demostrémoslo al mundo.",
     },
     about: {
       title: "¿De qué trata?",
@@ -122,7 +122,7 @@ const translations = {
     call: {
       title: "A Call to the Finest",
       content:
-        "Engineers. Developers. Designers. Physicists. Creators. If you have the passion to build the future, this is your moment. Mexico has extraordinary talent - it's time to show it to the world.",
+        "Engineers. Developers. Designers. Physicists. Creators. If you have the passion to build the future, this is your moment. Mexico has extraordinary talent - let's show it to the world.",
     },
     about: {
       title: "What is it about?",
