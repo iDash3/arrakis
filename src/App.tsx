@@ -26,7 +26,7 @@ const translations = {
     about: {
       title: "¿De qué trata?",
       content:
-        "Un hackathon de 48 horas patrocinado por empresas de Silicon Valley. Contamos con dos categorías principales: Inteligencia Artificial y Robótica. Con solo 100 lugares disponibles, los participantes competirán por premios en efectivo.\n\nEn Silicon Valley, la pasión por la tecnología es altamente valorada. Diseñadores, desarrolladores, ingenieros mecánicos, físicos - cada perspectiva aporta algo único. Queremos traer esa cultura a México.\n\nEl evento se llevará a cabo en el Tecnológico de Monterrey, Campus Monterrey.",
+        "Un hackathon de 48 horas patrocinado por empresas de Silicon Valley. Contamos con dos categorías principales: Inteligencia Artificial y Robótica. Con solo 100 lugares disponibles, los participantes competirán por premios en efectivo.\n\nEn Silicon Valley, la pasión por la tecnología es altamente valorada. Diseñadores, desarrolladores, ingenieros, físicos — cada perspectiva es valiosa. Queremos traer esa cultura a México.\n\nEl evento se llevará a cabo en el Tecnológico de Monterrey, Campus Monterrey.",
     },
     categories: {
       title: "Categorías",
