@@ -16,7 +16,7 @@ const translations = {
     hero: {
       title: "Arrakis",
       subtitle: "Hackathon",
-      date: "22-23 de Marzo",
+      date: "¡Nuevas fechas próximamente!",
     },
     call: {
       title: "Un llamado a los mejores",
@@ -104,6 +104,11 @@ const translations = {
       text: "© [year] Arrakis. Construyendo puentes entre el talento mexicano y Silicon Valley.",
       builtBy: "Built and designed por",
     },
+    team: {
+      title: "Equipo Organizador",
+      description:
+        "Un equipo apasionado por construir puentes entre México y Silicon Valley.",
+    },
   },
   en: {
     header: {
@@ -117,7 +122,7 @@ const translations = {
     hero: {
       title: "Arrakis",
       subtitle: "Hackathon",
-      date: "March 22-23",
+      date: "New dates published soon!",
     },
     call: {
       title: "A Call to the Finest",
@@ -204,6 +209,11 @@ const translations = {
     footer: {
       text: "© [year] Arrakis. Building bridges between Mexican talent and Silicon Valley.",
       builtBy: "Built and designed by",
+    },
+    team: {
+      title: "Organizing Team",
+      description:
+        "A team passionate about building bridges between Mexico and Silicon Valley.",
     },
   },
 };
@@ -321,11 +331,11 @@ function App() {
           <div className="font-bold text-2xl md:text-3xl font-heading select-none text-white/100">
             {translations[language].header.title}
           </div>
-          <div className="flex items-center gap-4">
-            {/* Mobile Language Toggle */}
+          {/* Mobile-only controls */}
+          <div className="flex items-center gap-4 md:hidden">
             <button
               onClick={toggleLanguage}
-              className="md:hidden relative w-16 h-8 bg-amber-100 rounded-full p-1 shadow-inner focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-50 transition-colors duration-300 ease-in-out"
+              className="relative w-16 h-8 bg-amber-100 rounded-full p-1 shadow-inner focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-50 transition-colors duration-300 ease-in-out"
               aria-label={isSpanish ? "Switch to English" : "Switch to Spanish"}
             >
               <motion.div
@@ -356,10 +366,9 @@ function App() {
                 {isSpanish ? "ES" : "EN"}
               </motion.div>
             </button>
-            {/* Hamburger Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-white p-2"
+              className="text-white p-2"
             >
               {isMobileMenuOpen ? (
                 <svg
@@ -395,17 +404,53 @@ function App() {
             </button>
           </div>
         </div>
-        <nav className="hidden md:flex flex-wrap justify-center gap-4 md:gap-12 text-base md:text-xl text-white/100 items-center">
-          <a href="#registro" className="hover:underline font-bold">
-            {translations[language].header.links.registro}
-          </a>
-          <a href="#patrocinadores" className="hover:underline">
-            {translations[language].header.links.sponsors}
-          </a>
-          <a href="#faq" className="hover:underline">
-            {translations[language].header.links.faq}
-          </a>
-        </nav>
+        <div className="hidden md:flex items-center gap-8">
+          <nav className="flex flex-wrap justify-center gap-4 md:gap-12 text-base md:text-xl text-white/100 items-center">
+            <a href="#registro" className="hover:underline font-bold">
+              {translations[language].header.links.registro}
+            </a>
+            <a href="#patrocinadores" className="hover:underline">
+              {translations[language].header.links.sponsors}
+            </a>
+            <a href="#faq" className="hover:underline">
+              {translations[language].header.links.faq}
+            </a>
+          </nav>
+          {/* Desktop language toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="relative w-16 h-8 bg-amber-100 rounded-full p-1 shadow-inner focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-50 transition-colors duration-300 ease-in-out"
+            aria-label={isSpanish ? "Switch to English" : "Switch to Spanish"}
+          >
+            <motion.div
+              className="absolute inset-0 flex items-center justify-end pr-2 text-amber-800 font-medium text-xs"
+              initial={false}
+              animate={{ opacity: isSpanish ? 1 : 0 }}
+            >
+              EN
+            </motion.div>
+            <motion.div
+              className="absolute inset-0 flex items-center pl-2 text-amber-800 font-medium text-xs"
+              initial={false}
+              animate={{ opacity: isSpanish ? 0 : 1 }}
+            >
+              ES
+            </motion.div>
+            <motion.div
+              className="w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center text-xs font-semibold text-amber-800"
+              animate={{
+                x: isSpanish ? 0 : 32,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 700,
+                damping: 30,
+              }}
+            >
+              {isSpanish ? "ES" : "EN"}
+            </motion.div>
+          </button>
+        </div>
       </header>
 
       {/* Mobile Menu */}
@@ -673,19 +718,23 @@ function App() {
                 {translations[language].sponsors.individual}
               </h3>
               <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
-                {["isaac.jpeg", "sully.png", "ivan.png", "yoran.jpeg"].map(
-                  (image, i) => (
-                    <div key={i} className="group relative">
-                      <img
-                        src={image}
-                        alt={`Individual Sponsor ${i + 1}`}
-                        className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover 
-                      border-2 border-[#d87c2a] transition-transform duration-300 
-                      hover:scale-110 hover:border-4"
-                      />
-                    </div>
-                  )
-                )}
+                {[
+                  "isaac.jpeg",
+                  "sully.png",
+                  "ivan.jpeg",
+                  "yoran.jpeg",
+                  "diego.jpeg",
+                ].map((image, i) => (
+                  <div key={i} className="group relative">
+                    <img
+                      src={image}
+                      alt={`Individual Sponsor ${i + 1}`}
+                      className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover 
+                        border-2 border-[#d87c2a] transition-transform duration-300 
+                        hover:scale-110 hover:border-4"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -715,6 +764,65 @@ function App() {
               </div>
             </div>
           </section>
+
+          {/* Team Section */}
+          {/* <section className="w-full max-w-5xl mx-auto py-16 px-4 text-center font-body backdrop-blur-sm">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-12">
+              {translations[language].team.title}
+            </h2>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              {[
+                {
+                  image: "isaac.jpeg",
+                  name: "Isaac Bautista",
+                  role: "Director",
+                  link: "https://twitter.com/isaacbautistas",
+                },
+                {
+                  image: "sully.png",
+                  name: "Sully Ledezma",
+                  role: "Operations",
+                  link: "https://twitter.com/sullyledezma",
+                },
+                {
+                  image: "ivan.jpeg",
+                  name: "Ivan Gonzalez",
+                  role: "Technology",
+                  link: "https://twitter.com/ivangzzz",
+                },
+                {
+                  image: "yoran.jpeg",
+                  name: "Yoran Betancourt",
+                  role: "Design",
+                  link: "https://twitter.com/yoranb",
+                },
+              ].map((member, i) => (
+                <a
+                  key={i}
+                  href={member.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-center"
+                >
+                  <div className="relative mb-4 transform transition-all duration-300 group-hover:scale-105">
+                    <div className="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-[#d87c2a] group-hover:border-4 transition-all duration-300">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute inset-0 rounded-full bg-[#d87c2a] opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+                  </div>
+                  <h3 className="font-bold text-lg group-hover:text-[#d87c2a] transition-colors duration-300">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-gray-600">{member.role}</p>
+                </a>
+              ))}
+            </div>
+          </section> */}
 
           {/* FAQ Section */}
           <section
@@ -750,6 +858,25 @@ function App() {
 
       <footer className="w-full py-6 text-center bg-[#ce9627] border-t border-gray-300 font-body">
         <p className="text-sm">
+          <a
+            href="https://www.instagram.com/arrakis_hackathon"
+            className="font-bold text-base hover:text-white transition-colors inline-flex items-center justify-center gap-2 mb-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="inline-block"
+            >
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+            @arrakis_hackathon
+          </a>
+          <br />
           {translations[language].footer.text.replace(
             "[year]",
             new Date().getFullYear().toString()
